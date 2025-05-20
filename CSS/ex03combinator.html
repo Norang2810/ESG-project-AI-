@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cobinator</title>
+
+
+    <style>
+        /* 계층 선택자 : 특정 위치의 요소를 계층적 구조로 선택 
+            -자손선택자 -> A B (띄어쓰기)
+            -자식선택자 -> A>B
+            -근접후행선택자 -> A+B
+            -후행선택자 -> A~B
+        */
+
+
+        /* div 기준, span 선택 -> 자손 선택자 */
+        div span{
+            color: salmon;
+        }
+       /* ol기준 ,li선택 */
+
+       ol>li{
+
+            background-color: aqua;
+       }
+
+       span+li{
+
+        background-color: red;
+       }
+
+       span~li{
+        color: blueviolet;
+       }
+
+       /* 그룹 선택자: 다양한 요소들을 콤마(,)로 선택 */
+
+
+       li,span{
+        background-color: beige;
+       }
+    </style>
+</head>
+<body>
+    <div>
+        <strong>점심메뉴 추천</strong>
+
+        <ol>
+            <span>(엄청 바삭한)</span>
+            <li>돈까스</li>
+            <li>국밥</li>
+            <li>제육볶음</li>
+        </ol>
+    </div>
+
+    <span>맛있겠다..</span>
+</body>
+</html>

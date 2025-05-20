@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>size</title>
+    <style>
+
+        /* 크기 단위
+        
+        
+        em : 부모 요소 크기에 따른 배수단위
+        rem : html 문서의 폰트 크기에 따른 배수 단위
+        % : 백분율 단위
+        
+        */
+        #pxFont{
+            font-size: 100px;
+        }
+        #emFont{
+            font-size: 0.5em;
+        }
+        #remFont{
+            font-size: 1rem;
+        }
+
+        .parent{
+            width: 300px;
+            height: 300px;
+            background-color: blueviolet;
+        }
+        .child{
+            width: 150px;
+            height: 150px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <p>폰트 크기 기준</p>
+    <!-- p#pxFont 입력후 tab키 누르면 
+        자동완성 -->    
+    <p id ="pxFont"> </p>
+    <p id="pxFont">px로 조정</p>
+    <p id="emFont">em로 조정</p>
+    <p id="remFont">rem로 조정정</p>
+
+    
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+
+
+    <style>
+        /* 
+           id = #
+           class = .      
+        
+        */
+
+        /* (1) 전체선택자 -> *로 표시 */
+        *{
+            font-family : serif;
+        }
+        
+        /* 
+            (2)태그 선택자 -> 태그이름으로 표시
+        */
+
+        li{
+            font-size: large;
+        }
+
+        /* 
+        아이디 : 중복 불가능, 한 문서 한 번만
+        클래스 : 중복 가능, 재사용성 뛰어남
+        
+        */
+
+        /*  (3) 아이디 선택자 -> #아이디로 표시 */
+
+        #id1{
+            background-color: aquamarine;
+        }
+
+        .class1{
+            text-decoration: underline;
+        }
+
+        .class2{
+
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h3>재미있는 HTML/CSS 시간!</h3>
+
+    <ul>
+        <li class="class1 class2">HTML</li>
+        <li class="class1" id="id1">CSS</li>
+        <li class="class2">JavaScript</li>
+    </ul>
+
+
+</body>
+</html>

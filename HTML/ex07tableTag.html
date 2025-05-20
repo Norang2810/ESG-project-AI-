@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table tag</title>
+</head>
+<body>
+    <!-- table : 테이블이 들어갈 공간을 생성
+         tr태그 : 테이블에 한 줄을 생성 
+         th태그 :제목 셀로 값이 담기는 태그
+         td태그 : 일반 셀로 값이 담기는 태그
+         colspan : column묶음 (가로 셀 병합)
+         rowspan : row 묶음 (세로 셀 병합)
+         **bgcolor : 백그라운드컬러 인데 bgcolor 줄임말아닌가?? 원래이게 가능한가?**
+    -->
+
+    <table border="1px solid black">
+        <tr bgcolor="ligtblue">
+            <th>이름</th>
+            <th colspan="2">포지션/소속</th>
+        </tr>
+        
+        <tr>
+            <td>손흥민</td>
+            <td rowspan="2">MF</td>
+            <td>토트넘</td>
+        </tr>
+        <tr>
+            <td>이강인</td>
+            <td>파리 생제르맹</td>
+        </tr>
+        <tr>
+            <td>설영우</td>
+            <td>DF</td>
+            <td>울산 현대</td>
+        </tr>
+
+    </table>
+
+
+</body>
+</html>
