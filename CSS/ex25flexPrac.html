@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex practice</title>
+    <style>
+        /* 
+        (0) img-section에 메뉴 사진 추가
+            text-section에 메뉴 이름 추가
+            card-container 영역 설정
+        (1) 전체영역을 container로 지정 
+            카드들을 item으로 설정
+        (2) 카드들이 전체영역을 벗어날때
+            줄바꿈이 될수있도록 설정
+        (3) 카드들의 메인축 공간 배분 균일하게 설정
+
+        (4) 카드 영역을 container로 지정
+            카드 내 이미자와 텍스트가 item으로 설정
+        (5) 카드 내 이미지와 텍스트가 세로로 배치되도록 설정
+        (6) 카드 내 텍스트 가운데 정렬 배치
+        */
+        .main-container {
+            display: flex;
+            flex-wrap: wrap; /*컨테이너 줄바꿈*/    
+            justify-content: space-evenly;
+
+        }
+
+        .card-container {
+            background-color:lightpink;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+
+            display: flex;
+            flex-direction: column; /* 아이템의 세로 정렬렬*/
+            align-items: center;
+        }
+
+        .img-section {
+            width: 300px;
+            height: 300px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .text-section {
+            font-size: 1.5rem;
+            font-weight: bold; 
+        }
+
+        .img1 {
+            background-image: url(https://www.baskinrobbins.co.kr/upload/product/main/62f1f363048e043f75a6ee14cb38e2e7.png);
+        }
+
+        .img2 {
+            background-image: url(https://www.baskinrobbins.co.kr/upload/product/main/7f981fc6e7a526daee600f4cee803b43.png);
+        }
+
+        .img3 {
+            background-image: url(https://www.baskinrobbins.co.kr/upload/product/main/fb92d70dee836652115c4f3b13175541.png);
+        }
+
+        .img4 {
+            background-image: url(https://www.baskinrobbins.co.kr/upload/product/main/0d67607c2ca4dde4ec24ac8109a343c2.png);
+        }
+
+        .img5 {
+            background-image: url(https://www.baskinrobbins.co.kr/upload/product/main/901f131644310c0eb356cbab7ecc4738.png);
+        }
+
+        .img6 {
+            background-image: url(https://www.baskinrobbins.co.kr/upload/product/main/a6bd7bcdd6bdb56f28df7e98f051abda.png);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 전체영역 -->
+    <div class="main-container">
+        <!-- 카드 하나의 영역 -->
+        <div class="card-container">
+            <!-- 사진 영역 -->
+            <div class="img-section img1"></div>
+            <!-- 이름 영역 -->
+            <div class="text-section">검정 아이스크림</div>
+        </div>
+        <div class="card-container">
+            <!-- 사진 영역 -->
+            <div class="img-section img2"></div>
+            <!-- 이름 영역 -->
+            <div class="text-section">블루베리 아이스크림림</div>
+        </div>
+        <div class="card-container">>
+            <!-- 사진 영역 -->
+            <div class="img-section img3"></div>
+            <!-- 이름 영역 -->
+            <div class="text-section">민트 초코 아이스크림</div>
+        </div>
+        <div class="card-container">
+            <!-- 사진 영역 -->
+            <div class="img-section img4"></div>
+            <!-- 이름 영역 -->
+            <div class="text-section">초콜릿 무스 아이스크림</div>
+        </div>
+        <div class="card-container">
+            <!-- 사진 영역 -->
+            <div class="img-section img5"></div>
+            <!-- 이름 영역 -->
+            <div class="text-section">바닐라 아이스크림림</div>
+        </div>
+        <div class="card-container">
+            <!-- 사진 영역 -->
+            <div class="img-section img6"></div>
+            <!-- 이름 영역 -->
+            <div class="text-section">그린티 아이스크림</div>
+        </div>
+    </div>
+</body>
+
+</html>
