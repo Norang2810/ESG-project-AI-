@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+
+    <style>
+            /* 
+            
+            z-indx : 요소의 쌓이는 순서를 지정
+            -큰숫자 :화면의 앞
+            -작은숫자 : 화면의 뒤뒤
+            
+            */
+
+            div{
+                width: 200px;
+                height: 200px;
+                position: absolute
+            }
+            .item1{
+                background-color: lightblue;
+                z-index: 50;
+            }
+
+            .item2{
+                background-color: lightpink;
+                top: 50px;
+                left: 100px;
+                z-index: 40;
+            }
+    </style>
+</head>
+<body>
+    <div class="item1"></div>
+    <div class="item2"></div>
+</body>
+</html>
