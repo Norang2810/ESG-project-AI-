@@ -2,18 +2,18 @@
 # * 가변매개변수 (튜플 형태)
 def var_param(*args):
     print(args)
-
-# %%
-var_param(1,2,3)
-
-# %%
-var_param(1,2,3,4,5)
 # %%
 # ** 가변매개변수 (딕셔너리형태)
 def print_map(**kwargs):
     print(kwargs)
     for key,value in kwargs.items():
         print(key,"|",value)
+
+# %%
+var_param(1,2,3)
+
+# %%
+var_param(1,2,3,4,5)
 # %%
 print_map(하나 =1)
 # %%
