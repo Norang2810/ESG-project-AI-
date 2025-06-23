@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn_1" onclick="print()">이벤트연결 1번째</button>
+    <button id="btn_2">이벤트연결 2번째</button>
+    <button id="btn_3">이벤트연결 3번째</button>
+
+    <script>
+        function print() {
+            alert("이벤트 실행");
+        }
+
+
+        // 이벤트 연결 방식 3가지 
+        // 1) 인라인방식 -> HTML에 직접 작성하는 방법
+        // 장점 : 코드를 빠르고 간결하게 작성이 가능하다.
+        // 단점 : 코드가 노출된다.
+        // 사용처 : 중요하지 않은 코드는 괜찮다. 누구나 아는 내장함수는 사용해도 괜찮다.
+
+        // 2)이벤트 리스너 방식 -> HTML과 JS의 역할을 분리
+        // 장점 : 코드가 노출되지않고, HTML과 JS의 역할이 분리가 된다 ->유지보수가 편하다.
+        document.getElementById("btn_2").addEventListener("click", print);
+
+        // 3)익명 함수 활용법 -> 함수의 이름이 없다.
+        // 이유 : 다른 곳에서 불러다가 쓸 이유가 없을때 -> 오직 하나의 태그에게만 기능을 부여할때
+        // 휘발성 -> 저장x , 메모리관리 효율적o 
+        document.getElementById("btn_3").addEventListener("click",function(){
+            alert("나만 쓰는 함수야");
+        });
+
+    </script>
+</body>
+
+</html>
