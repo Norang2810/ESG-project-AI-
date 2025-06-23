@@ -170,9 +170,33 @@ labels
 # %%
 # pandas 라이브러리의 내장된 plot차트는 속도빠름 간편함
 # matplotlib 라이브러리의 차트는 시각화에 특화됌
-plt.pie(count,labels=labels)
+plt.figurefigsize=((5.5))
+plt.pie(count,labels=labels,autopct='%.1f%%', textprops={'fontsize' : 13},
+        colors=['orange','green','blue','purple','gray'])
 # %%
 plt.show()
 # %%
-
+# '시도명' , '상권업종중분류' 칼럼으로 그룹화한 데이터 시각화
+data.groupby(['시도명','상권업종중분류명'])['상호명'].count().plot.bar()
+# %%
+# 수도권 데이터 위도 ,경도 시각화
+sns.scatterplot(data=capital,x='경도',y='위도')
+# %%
+# 동떨어져있는 데이터 확인하기
+capital[capital['경도'] <= 125]
+# %%
+# 수도권 데이터 위치 시각화  -시도별로
+# 이부분 개념 정리 완벽히좀.
+sns.scatterplot(data = capital,x='경도',y='위도',hue='시도명')
+# %%
+sns.scatterplot(data = capital,x='경도',y='위도',hue='상권업종중분류명')
+# %%
+# 지방권 데이터 위도,경도 시각화
+plt.figure(figsize=(6,7))
+sns.scatterplot(data=local, x='경도', y='위도')
+# %%
+# 지방권 데이터 위치시각화 -시도별로
+plt.figure(figsize=(6,7))
+sns.scatterplot(data=local, x='경도', y='위도',hue='시도명')
+plt.legend(loc='upper left')
 # %%
