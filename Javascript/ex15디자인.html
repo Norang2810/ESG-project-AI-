@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .team{
+            color: red;
+       }
+
+       .team2{
+            color: blue;
+       }
+       .team3{
+            color: green;
+       }
+    </style>
+</head>
+
+<body>
+
+    <span id="text" class="team">디자인 변경 해봅시다!</span><br>
+    <span id="text" class="team2">디자인 변경 해봅시다!</span><br>
+    <span id="text" class="team3">디자인 변경 해봅시다!</span><br>
+    <button id="btn1">디자인 변경 버튼</button>
+    <button id="btn2">원상복귀 버튼</button>
+
+
+    <script>
+        // 실습 : 버튼을 클릭했을 때 , span의 글자색을 빨간색으로 변경
+        // style을 접근할 때는 반드시 변경할 키값을 한번 더 접급한다.
+        function change() {
+            document.getElementById("text").style.color = "red";
+            document.getElementById("text").style.fontSize = '30px';
+        }
+        document.getElementById("btn1").addEventListener("click", change)
+    </script>
+</body>
+
+</html>
