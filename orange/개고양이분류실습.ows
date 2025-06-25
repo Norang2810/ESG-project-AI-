@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="Import Images" qualified_name="orangecontrib.imageanalytics.widgets.owimageimport.OWImportImages" project_name="Orange3-ImageAnalytics" version="" title="Import Images" position="(171.42857142857144, 398.17460317460313)" />
+		<node id="1" name="Image Viewer" qualified_name="orangecontrib.imageanalytics.widgets.owimageviewer.OWImageViewer" project_name="Orange3-ImageAnalytics" version="" title="Image Viewer" position="(398.85714285714283, 345.31746031746036)" />
+		<node id="2" name="Image Embedding" qualified_name="orangecontrib.imageanalytics.widgets.owimageembedding.OWImageEmbedding" project_name="Orange3-ImageAnalytics" version="" title="Image Embedding" position="(418.14285714285717, 430.31746031746036)" />
+		<node id="3" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="임베딩 전 이미지" position="(309.57142857142856, 592.8571428571429)" />
+		<node id="4" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="임베딩 후 이미지" position="(621.6190476190477, 321.57142857142856)" />
+		<node id="5" name="Distances" qualified_name="Orange.widgets.unsupervised.owdistances.OWDistances" project_name="Orange3" version="" title="Distances" position="(631.6666666666666, 433.33333333333337)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="1" source_node_id="0" sink_node_id="2" source_channel="Data" sink_channel="Images" enabled="true" source_channel_id="data" sink_channel_id="images" />
+		<link id="2" source_node_id="0" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="3" source_node_id="2" sink_node_id="4" source_channel="Embeddings" sink_channel="Data" enabled="true" source_channel_id="embeddings" sink_channel_id="data" />
+		<link id="4" source_node_id="2" sink_node_id="5" source_channel="Embeddings" sink_channel="Data" enabled="true" source_channel_id="embeddings" sink_channel_id="data" />
+	</links>
+	<annotations>
+		<text id="0" type="text/plain" rect="(695.7619047619046, 90.42857142857142, 437.0, 276.0)" font-family="맑은 고딕" font-size="16">이미지 임베딩:
+    컴퓨터는 이미지파일을 바로 이해하지못함!
+-&gt; 이미지를 컴퓨터가 이해할수있는 형태로 변환해주는 과정이 필요
+
+=&gt; 이미지 임베딩
+
+인공지능 7과정 중 3번째 과정인 데이터 전처리에 해
+
+지도학습 - 분류에 포함
+
+no missing data = 결측치</text>
+	</annotations>
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="pickle">gASVagEAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjAxyZWNlbnRfcGF0aHOUXZSMHm9y
+YW5nZXdpZGdldC51dGlscy5maWxlZGlhbG9nc5SMClJlY2VudFBhdGiUk5QpgZR9lCiMB2Fic3Bh
+dGiUjDtDOi9Vc2Vycy96aGR6aC9PbmVEcml2ZS/rsJTtg5Ug7ZmU66m0L29yYW5nZS9kYXRhL3Ry
+YWluIHNldJSMBnByZWZpeJSMB2Jhc2VkaXKUjAdyZWxwYXRolIwOZGF0YS90cmFpbiBzZXSUjAV0
+aXRsZZSMAJSMBXNoZWV0lGgQjAtmaWxlX2Zvcm1hdJROdWJhjBNzYXZlZFdpZGdldEdlb21ldHJ5
+lENCAdnQywADAAAAAAKRAAABiwAAA90AAAIsAAACkgAAAakAAAPcAAACKwAAAAAAAAAABm4AAAKS
+AAABqQAAA9wAAAIrlIwLX192ZXJzaW9uX1+USwF1Lg==
+</properties>
+		<properties node_id="1" format="pickle">gASVlQEAAAAAAAB9lCiMCmF1dG9Db21taXSUiIwSY29udHJvbEFyZWFWaXNpYmxllIiMCWltYWdl
+U2l6ZZRLZIwTc2F2ZWRXaWRnZXRHZW9tZXRyeZRDQgHZ0MsAAwAAAAABpwAAAL4AAATGAAADFQAA
+AacAAAC+AAAExgAAAxUAAAAAAAAAAAZuAAABpwAAAL4AAATGAAADFZSMC19fdmVyc2lvbl9flEsC
+jBBjb250ZXh0X3NldHRpbmdzlF2UjBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOU
+KYGUfZQojAZ2YWx1ZXOUfZQojAppbWFnZV9hdHRylIwFaW1hZ2WUS2eGlIwOc2VsZWN0ZWRfaXRl
+bXOUj5RK/v///4aUjAp0aXRsZV9hdHRylIwIY2F0ZWdvcnmUS2WGlGgGSwJ1jAphdHRyaWJ1dGVz
+lH2UaBdLAXOMBW1ldGFzlH2UKIwKaW1hZ2UgbmFtZZRLA2gRSwOMBHNpemWUSwKMBXdpZHRolEsC
+jAZoZWlnaHSUSwJ1dWJhdS4=
+</properties>
+		<properties node_id="2" format="literal">{'_auto_apply': True, 'cb_embedder_current_id': 0, 'cb_image_attr_current_id': 0, 'controlAreaVisible': True, 'savedWidgetGeometry': None, '__version__': 1}</properties>
+		<properties node_id="3" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00\x1e\x00\x00\x00\xd3\x00\x00\x03?\x00\x00\x02\xe5\x00\x00\x00\x1f\x00\x00\x00\xf1\x00\x00\x03&gt;\x00\x00\x02\xe4\x00\x00\x00\x00\x00\x00\x00\x00\x06n\x00\x00\x00\x1f\x00\x00\x00\xf1\x00\x00\x03&gt;\x00\x00\x02\xe4', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="4" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03P\x00\x00\x00\xcd\x00\x00\x06q\x00\x00\x02\xdf\x00\x00\x03Q\x00\x00\x00\xeb\x00\x00\x06p\x00\x00\x02\xde\x00\x00\x00\x00\x00\x00\x00\x00\x06n\x00\x00\x03Q\x00\x00\x00\xeb\x00\x00\x06p\x00\x00\x02\xde', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="5" format="literal">{'autocommit': True, 'axis': 0, 'controlAreaVisible': True, 'metric_id': 1, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\x90\x00\x00\x018\x00\x00\x03\xdd\x00\x00\x02\x7f\x00\x00\x02\x91\x00\x00\x01V\x00\x00\x03\xdc\x00\x00\x02~\x00\x00\x00\x00\x00\x00\x00\x00\x06n\x00\x00\x02\x91\x00\x00\x01V\x00\x00\x03\xdc\x00\x00\x02~', '__version__': 4}</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
