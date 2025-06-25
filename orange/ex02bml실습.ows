@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+g<?xml version='1.0' encoding='utf-8'?>
 <scheme version="2.0" title="" description="">
 	<nodes>
 		<node id="0" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="" title="File" position="(222.0, 502.0)" />
