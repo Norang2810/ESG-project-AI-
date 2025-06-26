@@ -73,6 +73,59 @@ FROM  EMPLOYEES
 GROUP BY  DEPARTMENT_ID 
 ORDER BY DEPARTMENT_ID ; 
 
+--직원테이블에서 직업별(GROUP BY) 평균 급여를 구하시오.
+--조건 : 사장님의 직업 AD_PRES인 것을 제외를 시켜라.
+
+
+--직원테이블에서 부서별 평균 급여를 구하시오
+--조건 : 부서가 30,50,80,100 에 해당하는 부서만 조회하시오.
+
+select round(avg(salary),1) as "평균급여"
+from employees
+where department_id in (30,50,80,100)
+group by department_id;
+
+
+
+--HAVING 절 : GROUP BY절이 실행이 되고 집계가 완료된 대상을 조건을 통해 필터링하는 문법
+-->집계함수에 대한 조건을 걸때 사용하는 "조건절"이다
+
+-- HAVING절 사용하는 방법
+
+
+--직원테이블에서 부서별(GROUP BY) 최고 연봉이 100000 이상인 부서만 출력.
+
+SELECT * FROM EMPLOYEES;
+
+SELECT  DEPARTMENT_ID, MAX(SALARY ) AS "최고 연봉"
+FROM    EMPLOYEES
+GROUP BY DEPARTMENT_ID;
+
+--직업별 평균 급여를 구하시오.
+--단 AD_PRES인 것을 제외하고 평균 급여가 100000 이상인 데이터만 출력
+
+SELECT  JOB_ID , AVG(SALARY) AS "평균급여"
+FROM    EMPLOYEES
+where job_id != 'AD_PRES'
+GROUP BY JOB_ID
+HAVING AVG(SALARY) >= 10000;
+
+--부서별 급여별 총합계를 구하시오.
+--단 급여 총합계가 10000 이하인 부서만 출력하고, NULL값을 가진 부서는 출력이 되면 안된다.
+
+SELECT department_id,SUM(SALARY) as "총합계"
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID IS NOT NULL
+GROUP BY DEPARTMENT_ID
+HAVING SUM(SALARY) <= 10000;
+
+
+
+
+
+
+
+
 
 
 
