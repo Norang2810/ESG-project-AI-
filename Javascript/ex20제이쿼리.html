@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!--        
+                라이브러리 임포트 하는방식 2가지
+                1)파일을 직접 다운로드해서 파일을 불러오는 '파일로드' 방식
+                장점: 파일을 가지고있으므로 안정성
+                단점: 공유할때 좋지않음
+
+                2) CDN방식 -> 공유,배포할때 사용
+                장점: 공유가 편하다, 업데이트 대응에 편하다.
+                단점: 원본파일을 가지고있지않아 안정성 떨어짐,네트워크방식 인터넷없음 X
+     -->
+</head>
+<body>
+    <h1 id="text">jQuery방식으로 접근</h1>
+
+    <button id="btn">기능 실행</button>
+
+    <script>
+        // 실습 : 버튼을 클릭했을때 h1태그의 컨텐츠를 콘솔에 출력
+
+        const print = () => {            
+            const txt = $("#text").text("수정").css("color","red");
+            console.log(txt.text());
+        }
+
+        // document.getElementById("btn").addEventListener("click",print);  //자바스크립트 문법
+        $("#btn").on("click",print)                                      //jQuery 문법
+    </script>
+</body>
+</html>
