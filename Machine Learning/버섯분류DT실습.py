@@ -112,4 +112,34 @@ fi_df = pd.DataFrame(tree_model.feature_importances_,              index=X_oh.co
               columns=["importance"])
 # %%
 fi_df['importance'].sort_values(ascending=False) # 냄새가 안나는 : odor_n 칼럼이 분류에 가장 큰역할을 함!
+
+# %%
+from sklearn.tree import export_graphviz
+# %%
+export_graphviz(tree_model, out_file="./data/tree.dot", 
+                class_names=["식용", "독성"],
+                feature_names=X_oh.columns,
+                impurity=True,
+                filled=True,
+                )
+
+# %%
+import matplotlib.pyplot as plt
+from sklearn.tree import plot_tree
+#%%
+# 트리 시각화 (크게 보기 위해 figsize 지정)
+plt.figure(figsize=(20, 10))  # (가로, 세로)
+plt.rcParams['font.family'] = 'Gulim'  # 한글 폰트 설정 (Gulim은 Windows에서 기본 제공되는 한글 폰트 중 하나입니다)
+# 트리 그리기
+plot_tree(tree_model,
+          feature_names=X_oh.columns,
+          class_names=["식용", "독성"],
+          filled=True,
+          impurity=True,
+          rounded=True,
+          fontsize=8)
+
+plt.title("의사결정나무 시각화")
+plt.show()
+
 # %%
