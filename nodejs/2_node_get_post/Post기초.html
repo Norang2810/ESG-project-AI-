@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Post방식</h1>
+    <p>URL을 통해 데이터를 전송하는 GET방식과 달리 POST방식은 HTTP패킷 BODY에 담겨서 넘어간다.</p>
+    <p>POST 요청은 브라우저 히스토리에 기록이 남지 않고, 데이터 길이에 제한이 없다.</p>
+
+    <form method="post" action="http://localhost:3001">
+        <input type="text" name="id" placeholder="아이디를 입력">
+        <br/>
+        <input type="password" name="pw" placeholder="비밀번호를 입력">
+        <br/>
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>
