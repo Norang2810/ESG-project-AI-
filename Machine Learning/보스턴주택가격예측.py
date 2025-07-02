@@ -173,3 +173,7 @@ def ridge_alpha(alpha) :
     print("훈련용 데이터 : ",ridge.score(X_train,y_train))
     print("테스트용 데이터 : ",ridge.score(X_test,y_test))
 # %%
+ridge_alpha(0.1)
+ridge_alpha(0.5)
+ridge_alpha(1)
+# %%
