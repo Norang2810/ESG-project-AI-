@@ -81,7 +81,7 @@ import seaborn as sns
 
 # %%
 plt.figure(figsize=(12, 12), facecolor="black")
-sns.heatmap(total.corr(),annot=True) #annot=True 수치값을 그래프에 표기
+sns.heatmap(total.corr(), annot=True)  # annot=True 수치값을 그래프에 표기
 plt.show()
 #  열 간의 상관관계를 -1~1 사이의 값으로 나타냄 : 피어슨 상곤계수
 # %%%1에 가까울수록 양의 상관관계 , -1에 가까울수록 음의 상관관계
@@ -95,11 +95,12 @@ plt.show()
 
 # 데이터 스케일링
 # 주의사항 : 데이터 전처리 가장 마지막에 사용
-# 결측치가 없는 상태에서 사용 
+# 결측치가 없는 상태에서 사용
 # 이상치는 있어도됌.
 
-#%%
+# %%
 from sklearn.preprocessing import StandardScaler
+
 # %% 스케일러 객체 생성
 scaler = StandardScaler()
 # %% 데이터 프레임과 관련한 통계치 확인
@@ -109,43 +110,46 @@ scaler.fit(X)
 # %% 문제 데이터 정규화
 X_trans = scaler.transform(X)
 # %%
-X_trans = pd.DataFrame(X_trans,columns=X.columns)
+X_trans = pd.DataFrame(X_trans, columns=X.columns)
 # %%
 X_trans.describe()
 # %% 훈련과 평가 데이터 분리
-#%%
+# %%
 from sklearn.model_selection import train_test_split
+
 # train : test = 0.75 : 0.25
 # 1.train,test 나누는 도구 가져오기
-#%%
+# %%
 # 2.도구 활용해서 데이터 분할
 # X_trans사용해서 분할하기 ,random_state = 5
 # X_train ,y_train ,X_train ,y_test   모양을 출력
 X_train, X_test, y_train, y_test = train_test_split(
-    X_trans, y, test_size=0.25, random_state=5 
+    X_trans, y, test_size=0.25, random_state=5
 )
-#%%
+# %%
 X_train.shape, X_test.shape, y_train.shape, y_test.shape
-#%% 모델 선택 및 하이퍼파라미터 튜닝
+# %% 모델 선택 및 하이퍼파라미터 튜닝
 # 수학적 공식을 이용한 해석적 모델 => LinearRegressor
 # 경사하강법 => SGDRegressor
-#%%
-from sklearn.linear_model import LinearRegression
-#%%
-from sklearn.linear_model import SGDRegressor
-#%%
-linear_model = LinearRegression()
-#%%
-linear_model.fit(X_train,y_train)
 # %%
-sgd_model=SGDRegressor(eta0=0.000000000001,verbose=2)
-#%%
-sgd_model.fit(X_train,y_train)
-#%% R2 score 0~1 사이의 값을 가진다.
-linear_model.score(X_test,y_test)
-#%% 음수가 나올수있음.
-sgd_model.score(X_test,y_test)
-#%% 선형모델의 단점 
+from sklearn.linear_model import LinearRegression
+
+# %%
+from sklearn.linear_model import SGDRegressor
+
+# %%
+linear_model = LinearRegression()
+# %%
+linear_model.fit(X_train, y_train)
+# %%
+sgd_model = SGDRegressor(eta0=0.000000000001, verbose=2)
+# %%
+sgd_model.fit(X_train, y_train)
+# %% R2 score 0~1 사이의 값을 가진다.
+linear_model.score(X_test, y_test)
+# %% 음수가 나올수있음.
+sgd_model.score(X_test, y_test)
+# %% 선형모델의 단점
 #   -모델이 잘못 되었을 경우 수정이 안됌.
 #   -규제를 가해서 단점을 해소!
 #   -L1규제 + 선형모델 : Lasso
@@ -156,24 +160,81 @@ sgd_model.score(X_test,y_test)
 #       특성의 중요도를 바탕으로 가중치를 조절
 #       중요도가 높은 특성 : 가중치 극대화
 #       중요도가 낮은 특성 : 가중치를 0에 가깝게 만듦(0으로 만들지는 않음)
-#%%     *L1규제
+# %%     *L1규제
 #       특성의 중요도를 바탕으로 가중치를 조절
 #       중요도가 높은 특성 : 가중치 극대화
 #       중요도가 낮은 특성 : 가중치를 0으로 만듦 -> 사용하지 않음
-#%%     L2규제 사용
+# %%     L2규제 사용
 from sklearn.linear_model import Ridge
+
 # %% 하이퍼파라미터 : 규제 강도를 조절하는 alpha
 # alpha값 증가 -> 규제를 늘리고 -> 모델이 단순해짐 -> 과대적합 해결
 # alpha값 감소 -> 규제를 줄이고 -> 모델이 복잡해짐 -> 과소적합 해결
 
-#%%
-def ridge_alpha(alpha) :
-    ridge = Ridge(alpha=alpha) #모델 생성
-    ridge.fit(X_train,y_train) #모델 학습
-    print("훈련용 데이터 : ",ridge.score(X_train,y_train))
-    print("테스트용 데이터 : ",ridge.score(X_test,y_test))
+
+# %%
+def ridge_alpha(alpha):
+    ridge = Ridge(alpha=alpha)  # 모델 생성
+    ridge.fit(X_train, y_train)  # 모델 학습
+    print("훈련용 데이터 : ", ridge.score(X_train, y_train))
+    print("테스트용 데이터 : ", ridge.score(X_test, y_test))
+
+
 # %%
 ridge_alpha(0.1)
 ridge_alpha(0.5)
 ridge_alpha(1)
+# %% 특성끼리(문제,X)곱해서 새로운 특성을 만들어보자!
+# 특성 확장 전 특성데이터가 어떤게 있는지 확인
+# columns
+col =X.columns
+# %%
+col.size
+#%%
+X.shape
+# %% for문을 통해서 columns의 모든 요소들에 접근
+# 나머지 컬럼들과 모두 곱할거임
+for i in range(col.size) : #전체컬럼을 순서대로 꺼내오는 for문
+    for j in range(i,col.size) : #곱해지는 컬럼을 정하는 for문
+        X[col[i]+"*"+col[j]] = X[col[i]]*X[col[j]] #
+# %%
+X.info()
+# %% 데이터 스케일링
+"""
+    1.스케일링 도구 가져오기
+    2.스케일링 도구 객체 생성
+    3.standard가 데이터를 학습
+    4.X변환 -> X_trans
+    5.X_trans 통계치 출력
+"""
+#%%
+
+standard =StandardScaler()
+# %%
+# %% 데이터 프레임과 관련한 통계치 확인
+X.describe()
+# %% Scaler객체가 데이터의 분포가 어떻게 되어있는지 파악
+standard.fit(X)
+# %% 문제 데이터 정규화
+X_trans = standard.transform(X)
+# %%
+X_df_trans = pd.DataFrame(X_trans,columns=X.columns)
+# %%
+X_df_trans.info()
+
+# %%
+X_df_trans.describe()
+#%%
+from sklearn.linear_model import Lasso
+#%%
+X_train, X_test, y_train, y_test = train_test_split(X_df_trans, y, test_size=0.3, random_state=5)
+# %% L1 규제 모델 함수 생성
+def lasso_alpha(alpha) :
+    lasso=Lasso(alpha=alpha)# Lasso 모델 생성
+    print("훈련용데이터 :" ,lasso.score(X_train,y_train))
+    print("테스트용데이터 :" ,lasso.score(X_test,y_test))
+    print("합계용데이터 :" ,np.sum(lasso.coef_ !=0))
+    lasso.fit
+# %%
+
 # %%
