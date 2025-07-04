@@ -1,0 +1,14 @@
+1.처음 설치 했을때 workbench의 safe mode를 해제해야한다.
+2.'config' 폴더에 파일을 하나 생성해서 DB에 대한 정보를 기재한다.
+    -host ,user , password , port ,database
+    -port는 숫자로 작성
+    -password는 문자로 작성
+3. DB정보 파일에 conn.connect()   <- 최초연결까지 하고 이동.
+
+4.DB를 연결한 Router 파일로 이동
+
+5.DB에 접근 conn.query(sql문,배열,함수)
+    -SQL문에 변동될 데이터는 ? 로 작성
+    - ? 에 대한 값을 배열안에 차례로 넣어주기
+    - 에러가 나면 err, 성공했다면 rows 안에 뭔가가 들어가게 됨!
+    - rows가 존재했다면 회원가입 성공! ,rows가 undefined이면 회원가입 실패
