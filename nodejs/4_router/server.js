@@ -1,6 +1,11 @@
 const express = require('express')
 const app = express();
 const mainRouter = require('./routes/mainRouter');
+const subRouter = require('./routes/subRouter');
+
+
+// 정적인 파일 경로 지정 (미들웨어)
+app.use(express.static(__dirname + '/public'))
 
 app.use('/',mainRouter)
 /*  
@@ -19,6 +24,9 @@ app.use('/',mainRouter)
     -lol    /esports/lol
     -fc     /esports/fc
 */
+
+// 서브 경로
+app.use('/esports',subRouter)
 
 app.listen(3001,()=>{
     console.log("3001 wait ..")

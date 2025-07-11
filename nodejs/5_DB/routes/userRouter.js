@@ -11,7 +11,7 @@ router.post('/join', (req,res)=>{
 
     // 사용자의 정보를 DB에 넣어야한다! ->MySQL 사용
     
-    let sql = "INSERT INO NODEJS_MEMBER VALUES (?,?,?,?,?)"
+    let sql = "INSERT INTO NODEJS_MEMBER VALUES (?,?,?,?,?)"
     conn.query(sql,[id,pw,userName,mbti,song], (err,rows)=>{
         console.log('rows',rows)
         if(rows){
