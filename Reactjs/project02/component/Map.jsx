@@ -71,7 +71,7 @@ export const Map = () => {
         <div key={item.title}>
             <h2>{item.title}</h2>
             <p>{item.content}</p>
-            <img src={item.imgSrc} /><br />
+            <img src={item.imgSrc} width='300px'/><br />
             <a href={item.SNS}>SNS 보기</a>
         </div>
     );
@@ -85,7 +85,6 @@ export const Map = () => {
                 <p>{newList}</p>
             </div>
             <div>            
-                <img width='300px' />
                 {newDataList}
             </div>
         </div>
