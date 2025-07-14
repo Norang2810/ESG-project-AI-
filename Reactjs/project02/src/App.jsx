@@ -3,7 +3,8 @@ import './App.css'
 import Menu from '../component/Menu.jsx'
 import Myteam from '../component/Myteam.jsx'
 import MyState from '../component/MyState.jsx'
-
+import MyInsta from '../component/MyInsta.jsx'
+import Map from '../component/Map.jsx'
 function App() {
 
   return (
@@ -24,9 +25,13 @@ function App() {
     //   <Myteam dept="홍보팀" dName="임보미"></Myteam>
     //   <Myteam dept="기획팀" dName="최영화"></Myteam>
     // </>
-
+    
+    // <>
+    // {/* <MyState></MyState> */}
+    // {/* <MyInsta></MyInsta> */}
+    // </>
     <>
-    <MyState></MyState>
+    <Map></Map>
     </>
   )
 }
