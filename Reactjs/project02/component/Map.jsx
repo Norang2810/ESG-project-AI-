@@ -76,6 +76,8 @@ export const Map = () => {
         </div>
     );
 
+
+
     return (
         <div>
             <div>
@@ -87,6 +89,20 @@ export const Map = () => {
             <div>            
                 {newDataList}
             </div>
+
+            <div>
+                {dataList.map(item=>(
+                    <div>
+                        <img width='100px' src={item.imgSrc}></img>
+                        <h2>{item.title}</h2>
+                        <p>
+                            {item.content}
+                        </p>
+                        <a href={item.SNS}>인스타그램으로 이동</a>
+                    </div>
+                ) )}
+            </div>
+
         </div>
     )
 }

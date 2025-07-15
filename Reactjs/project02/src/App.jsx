@@ -5,6 +5,8 @@ import Myteam from '../component/Myteam.jsx'
 import MyState from '../component/MyState.jsx'
 import MyInsta from '../component/MyInsta.jsx'
 import Map from '../component/Map.jsx'
+import Filter from '../component/Filter.jsx'
+import Todo from '../component/Todo.jsx'
 function App() {
 
   return (
@@ -30,8 +32,11 @@ function App() {
     // {/* <MyState></MyState> */}
     // {/* <MyInsta></MyInsta> */}
     // </>
+    
+  // <Map></Map>
+    // <Filter></Filter>
     <>
-    <Map></Map>
+    <Todo></Todo>
     </>
   )
 }
