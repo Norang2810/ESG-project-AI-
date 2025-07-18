@@ -74,6 +74,8 @@ const RSP = () => {
             <div>
                 {/* 버튼 3개 */}
                 {pos.map(item => <button key={item} onClick={() => { gameStart(item) }}>{item}</button>)}
+                {/* {pos.map(item=> <button key={item} onClick={()=>{gameStart(item)}}>{item}</button>)} */}
+
             </div>
         </div>
 

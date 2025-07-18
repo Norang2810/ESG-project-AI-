@@ -6,6 +6,8 @@ import Login from '../component/Login'
 import MyRandom from '../component/MyRandom'
 import ProHome from '../component/ProHome'
 import ProDetail from '../component/ProDetail'
+import LoginS from '../component/LoginS'
+import LoginF from '../component/LoginF'
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
             <Route path='/random' element = {<MyRandom></MyRandom>}></Route>
             <Route path='/prohome' element = {<ProHome></ProHome>}></Route>
             <Route path='/prodetail' element = {<ProDetail></ProDetail>}></Route>
+            <Route path='/logins' element = {<LoginS></LoginS>}></Route>
+            <Route path='/loginf' element = {<LoginF></LoginF>}></Route>
           </Routes>
           
     </>

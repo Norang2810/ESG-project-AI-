@@ -1,0 +1,15 @@
+1.vscode 터미널
+2. npm create vite@latest   => OK to proceed ? -> y
+ -> 프로젝트 이름 설정 (한글x , 숫자로 시작 x)
+3. Select a framework 방향키로 -> React 
+4. Select A varaint 방향키로 -> Javascript + SWC
+5. cd project01(폴더로 이동)
+6. npm install
+7. npm run dev
+
+
++router 기능 
+=> npm install react-router-dom
+
++axios 기능
+=> npm install axios

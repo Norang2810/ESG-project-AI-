@@ -72,7 +72,7 @@ const Todo = () => {
                     {todos.map(item => (
                         <li key={item.key}>
                             <input
-                                onChange={() => { handleTodoToggle(item.key) }}
+                                  onChange={() => { handleTodoToggle(item.key) }}
                                 type="checkbox" ></input>
                             <label style={{
                                 textDecoration : item.completed ? 'line-through' : 'none'

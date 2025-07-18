@@ -13,7 +13,7 @@ function AppEx() {
     let month = today.getMonth() + 1
     // 4.조건에 따라 계절을 정의하기(season)
     let season = ""
-    
+
     if (parseInt(month / 3) === 1) {
         season = '봄'
     } else if (parseInt(month / 3) === 2) {
@@ -30,7 +30,7 @@ function AppEx() {
     // h1 => 2025.07.13
     // 수평선 hr
     // h3 = > 000님 지금은 여름입니다. 좋은 하루보내세요.
-
+    
 
 
 

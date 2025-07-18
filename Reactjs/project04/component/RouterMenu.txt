@@ -1,0 +1,15 @@
+React 라우터 사용 순서
+1.react-router-dom 설치 - > npm install react-router-dom
+2.Router 기능 허용 -> <BrowserRouter></BrowserRouter>
+3.주소값과 컴포넌트를 대응
+    ==>>>
+      <Route path='/' element={<Home></Home>}></Route> 
+     
+      <Route path='/about' element ={<About></About>}></Route>
+4.주소값 관리
+ -> Routes 
+    <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        {/*  /about으로 접근했을때 About컴포넌트를 출력 */}
+        <Route path='/about' element={<About></About>}></Route>
+    </Routes>
