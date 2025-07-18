@@ -1,0 +1,10 @@
+Sequential Data (순차기반 데이터)
+-분석에 사용되는 특성들이 시간적,순차적 특징을 지닌 데이터
+
+SimpleRNN (units = 3 , input_shape = (4,9))
+-units : 뉴런의 개수
+-input_shape : (timesteps,features) 형태의 튜플로 들어감
+-timesteps : 순환횟수 설정(즉, 입력데이터가 몇번이나 들어오는지)
+
+
+
